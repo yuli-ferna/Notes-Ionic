@@ -1,0 +1,12 @@
+{
+    "HELLO": "Hola",
+    "WELCOME": "Bienvenido",
+    "NOTES": "Notas",
+    "TITLE": "Título",
+    "DESCRIPTION": "Descripción",
+    "SAVE": "Guardar",
+    "MENSAGE_CHANGE_LAN": "Idioma cambiado",
+    "MENSAGE_SAVE_NOTE": "¡Nota guardada exitosamente!",
+    "MENSAGE_DELETE_NOTE": "Nota eliminada exitosamente"
+
+}

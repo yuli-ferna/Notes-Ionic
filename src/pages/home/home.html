@@ -1,14 +1,43 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+        {{ 'NOTES' | translate }}
     </ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="chooseButton()">
+            <!-- <ion-icon class="translate"></ion-icon> -->
+            {{ translateService.currentLang }}   
+        </button>
+        <!-- <button ion-button icon-only (click)="createNote()">
+          <ion-icon name="add"></ion-icon>
+        </button> -->
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <!-- Lista de notas -->
+  <ion-list>
+      <ion-item-sliding  *ngFor="let note of notes" >
+        <ion-item (click)="gotToDetail(note.id)">
+          {{ note.title }}
+        </ion-item>
+  
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="delete(note)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+  
+      </ion-item-sliding>
+    </ion-list>
+  
+  <!-- Boton crear nueva nota -->
+ <!--  <div padding>
+    <button ion-button item-end block (click)="createNote()">Crear nota</button>
+  </div> -->
+  <ion-fab right bottom>
+      <button ion-fab class="button-add" (click)="createNote()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>
